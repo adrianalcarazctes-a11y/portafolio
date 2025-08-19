@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrián Alcaraz - Creador de Contenido con IA</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Exo 2 (Titles) & Roboto (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        /* --- Base & Fonts --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0A0A10; /* Near-black background */
+            color: #EAEAEA; /* Off-white text */
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-title {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* --- Animated Gradient Background --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 15% 25%, rgba(74, 144, 226, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 85% 75%, rgba(245, 166, 35, 0.15) 0%, transparent 40%);
+            z-index: -1;
+            animation: aurora 15s infinite linear;
+        }
+
+        @keyframes aurora {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- Custom Gradient Text --- */
+        .gradient-text {
+            background: linear-gradient(90deg, #F5A623, #F8E71C, #4A90E2, #50E3C2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradient-flow 8s ease-in-out infinite;
+        }
+
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* --- Hero Section Styling --- */
+        .hero-section {
+            background-image: url('https://i.ibb.co/KzxhDyJg/20250819-0007-Fusion-of-Thought-simple-compose-01k304kstmfdt82qte6x30y9th.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(10, 10, 16, 0.6) 0%, rgba(10, 10, 16, 0.95) 100%);
+        }
+
+        /* --- Card & Interactive Elements Styling --- */
+        .project-card, .service-card {
+            background-color: rgba(20, 20, 30, 0.6);
+            border: 1px solid rgba(74, 144, 226, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .project-card:hover, .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 30px rgba(74, 144, 226, 0.3);
+            border-color: rgba(74, 144, 226, 0.5);
+        }
+        
+        /* --- Video Container --- */
+        .video-container {
+            position: relative;
+            padding-bottom: 177.77%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 0.75rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- Scroll Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- =========== HEADER / HERO SECTION =========== -->
+    <header class="hero-section h-screen w-full flex flex-col justify-center items-center text-center p-4">
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white animate-fade-in-down">Adrián Alcaraz</h1>
+            <p class="mt-4 text-3xl md:text-4xl font-bold gradient-text">Creando lo imposible.</p>
+            <p class="mt-8 max-w-xl mx-auto text-lg text-gray-300">
+                Fusiono la inteligencia artificial con la creatividad para construir diseños que no solo se ven bien, sino que conectan y convierten. Mi pasión es transformar ideas en contenido visual que captura la atención y genera resultados.
+            </p>
+            <div class="mt-10">
+                <a href="#proyectos" class="font-title bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold py-3 px-8 rounded-full text-lg hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/20">
+                    Ver mis proyectos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-8">
+
+        <!-- =========== PROYECTOS SECTION =========== -->
+        <section id="proyectos" class="py-20 md:py-32">
+            <h2 class="font-title text-4xl md:text-5xl font-black text-center text-white mb-16 reveal">Proyectos Destacados</h2>
+
+            <div class="space-y-24">
+
+                <!-- --- Proyecto 1: Thanos --- -->
+                <div class="project-card grid grid-cols-1 md:grid-cols-5 gap-8 p-6 md:p-8 rounded-2xl reveal">
+                    <div class="md:col-span-2 flex justify-center items-center">
+                        <div class="video-container w-full max-w-xs mx-auto">
+                            <iframe src="https://www.youtube.com/embed/EXFg8-RSixM?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-2xl font-bold text-white">Campaña: Thanos Visita la Estética</h3>
+                        <p class="mt-4 text-sm text-gray-400 italic">"Un video corto que utiliza el humor y la cultura pop para humanizar los tratamientos de belleza, mostrando al icónico personaje Thanos en una inesperada visita a una clínica de estética para su 'mantenimiento'."</p>
+                        
+                        <div class="mt-6 space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-blue-400 mb-2">Objetivos Clave:</h4>
+                                <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                    <li><strong class="font-medium text-gray-200">Diferenciación y Notoriedad:</strong> Romper con la publicidad tradicional del sector.</li>
+                                    <li><strong class="font-medium text-gray-200">Conexión y Viralidad:</strong> Captar a una audiencia más joven.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-400 mb-2">Tecnología Aplicada:</h4>
+                                <p class="text-gray-300">Generación de Imágenes con IA, Edición de Video y Animación, Síntesis de Voz con IA.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- --- Proyecto 2: Explosion Estetica --- -->
+                <div class="project-card grid grid-cols-1 md:grid-cols-5 gap-8 p-6 md:p-8 rounded-2xl reveal">
+                    <div class="md:col-span-3 md:order-2">
+                        <h3 class="text-2xl font-bold text-white">Campaña: Metamorfosis de la Belleza</h3>
+                        <p class="mt-4 text-sm text-gray-400 italic">"Un video de alto impacto que utiliza una poderosa metáfora visual: la transformación de un bloque de arcilla en bruto, que explota para revelar un espacio de estética sofisticado y perfecto."</p>
+                        <div class="mt-6 space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-blue-400 mb-2">Objetivos Clave:</h4>
+                                <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                    <li><strong class="font-medium text-gray-200">Posicionamiento Premium:</strong> Elevar la percepción de la marca, asociándola con el arte y la excelencia.</li>
+                                    <li><strong class="font-medium text-gray-200">Conexión Emocional:</strong> Generar un sentimiento de aspiración y confianza.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-400 mb-2">Tecnología Aplicada:</h4>
+                                <p class="text-gray-300">Animación 3D y CGI, Simulación de Físicas (VFX), Edición y Composición Digital, Diseño de Sonido Profesional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 md:order-1 flex justify-center items-center">
+                        <div class="video-container w-full max-w-xs mx-auto">
+                            <iframe src="https://www.youtube.com/embed/_wUF0UGfqTo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- --- Proyecto 3: Peeling --- -->
+                <div class="project-card grid grid-cols-1 md:grid-cols-5 gap-8 p-6 md:p-8 rounded-2xl reveal">
+                    <div class="md:col-span-2 flex justify-center items-center">
+                        <div class="video-container w-full max-w-xs mx-auto">
+                            <iframe src="https://www.youtube.com/embed/oOfm3pn46tQ?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-2xl font-bold text-white">Campaña: La Hora de la Claridad</h3>
+                        <p class="mt-4 text-sm text-gray-400 italic">"Un video poético que explora el tratamiento estético como un ritual de purificación. Se narra un viaje desde el 'ruido' del estrés hacia la 'claridad' de una piel radiante y una mente en calma."</p>
+                        <div class="mt-6 space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-blue-400 mb-2">Objetivos Clave:</h4>
+                                <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                    <li><strong class="font-medium text-gray-200">Conexión Emocional:</strong> Resonar con la necesidad del espectador de encontrar un momento de paz.</li>
+                                    <li><strong class="font-medium text-gray-200">Comunicar Valor Holístico:</strong> Posicionar el servicio como una experiencia de bienestar integral.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-400 mb-2">Tecnología Aplicada:</h4>
+                                <p class="text-gray-300">Producción de Video (Tomas Macro), Edición Cinematográfica, Diseño de Sonido Inmersivo (ASMR), IA para visuales conceptuales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- --- Proyecto 4: Estatua de la Libertad --- -->
+                 <div class="project-card grid grid-cols-1 md:grid-cols-5 gap-8 p-6 md:p-8 rounded-2xl reveal">
+                    <div class="md:col-span-3 md:order-2">
+                        <h3 class="text-2xl font-bold text-white">Campaña: Mi Piel se Viste de Libertad</h3>
+                        <p class="mt-4 text-sm text-gray-400 italic">"Un cortometraje que redefine el tratamiento estético, presentándolo no como un acto para el mundo, sino como un íntimo y poderoso acto de amor propio."</p>
+                        <div class="mt-6 space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-blue-400 mb-2">Objetivos Clave:</h4>
+                                <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                     <li><strong class="font-medium text-gray-200">Redefinir la Narrativa del Sector:</strong> Desplazar la conversación desde la vanidad hacia el bienestar interior.</li>
+                                     <li><strong class="font-medium text-gray-200">Crear un Manifiesto de Marca:</strong> Establecer a la marca como un referente de empatía.</li>
+                                     <li><strong class="font-medium text-gray-200">Generar un Impacto Emocional Inolvidable.</strong></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-400 mb-2">Tecnología y Arte:</h4>
+                                <p class="text-gray-300">Guionización, Generación de Video mediante IA, Voz en Off Profesional, Edición Cinematográfica y Diseño de Sonido.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 md:order-1 flex justify-center items-center">
+                        <div class="video-container w-full max-w-xs mx-auto">
+                           <iframe src="https://www.youtube.com/embed/azA4ZU0ptPM?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- --- Proyecto 5: Campañas Gráficas --- -->
+                <div class="project-card p-6 md:p-8 rounded-2xl reveal">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-white">Campañas Gráficas: Versatilidad Estratégica</h3>
+                        <p class="mt-2 text-gray-400 max-w-3xl mx-auto">Una demostración de contenido visual multifacético, diseñado para conectar con diferentes segmentos de la audiencia.</p>
+                    </div>
+                    <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        <a href="https://i.ibb.co/LdTnZ2LP/20250813-0647-Le-n-Humillado-simple-compose-01k2hd42gxeqwv7gghsffydz6b.png" target="_blank"><img src="https://i.ibb.co/LdTnZ2LP/20250813-0647-Le-n-Humillado-simple-compose-01k2hd42gxeqwv7gghsffydz6b.png" alt="Trato Real" class="rounded-lg object-cover aspect-[9/16] transition-transform duration-300 hover:scale-105"></a>
+                        <a href="https://i.ibb.co/LzVXXfRw/Chat-GPT-Image-14-ago-2025-10-55-42.png" target="_blank"><img src="https://i.ibb.co/LzVXXfRw/Chat-GPT-Image-14-ago-2025-10-55-42.png" alt="Los cuentos de Hadas mienten" class="rounded-lg object-cover aspect-[9/16] transition-transform duration-300 hover:scale-105"></a>
+                        <a href="https://i.ibb.co/gMP3H6fP/20250811-2139-Triunfo-en-Dos-Actos-simple-compose-01k2dvcenef8789kbdm63e8462.png" target="_blank"><img src="https://i.ibb.co/gMP3H6fP/20250811-2139-Triunfo-en-Dos-Actos-simple-compose-01k2dvcenef8789kbdm63e8462.png" alt="Mision cumplida" class="rounded-lg object-cover aspect-[9/16] transition-transform duration-300 hover:scale-105"></a>
+                        <a href="https://i.ibb.co/TNhpdvR/Chat-GPT-Image-13-ago-2025-06-25-06.png" target="_blank"><img src="https://i.ibb.co/TNhpdvR/Chat-GPT-Image-13-ago-2025-06-25-06.png" alt="Tu nuevo capitulo" class="rounded-lg object-cover aspect-[9/16] transition-transform duration-300 hover:scale-105"></a>
+                        <a href="https://i.ibb.co/wNdvk68X/8c9cf374-dd45-4dd4-a113-2e1162387e42.png" target="_blank"><img src="https://i.ibb.co/wNdvk68X/8c9cf374-dd45-4dd4-a113-2e1162387e42.png" alt="Limpieza Facial" class="rounded-lg object-cover aspect-[9/16] transition-transform duration-300 hover:scale-105"></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========== SERVICIOS SECTION =========== -->
+        <section id="servicios" class="py-20 md:py-32">
+            <h2 class="font-title text-4xl md:text-5xl font-black text-center text-white mb-16 reveal">Mis Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card p-8 rounded-2xl text-center reveal">
+                    <h3 class="text-xl font-bold text-white">Creación de Contenido para Redes</h3>
+                </div>
+                <div class="service-card p-8 rounded-2xl text-center reveal" style="transition-delay: 100ms;">
+                    <h3 class="text-xl font-bold text-white">Edición de Video con IA</h3>
+                </div>
+                <div class="service-card p-8 rounded-2xl text-center reveal" style="transition-delay: 200ms;">
+                    <h3 class="text-xl font-bold text-white">Diseño de Identidad Visual</h3>
+                </div>
+                 <div class="service-card p-8 rounded-2xl text-center reveal" style="transition-delay: 300ms;">
+                    <h3 class="text-xl font-bold text-white">Creación de Páginas Web</h3>
+                </div>
+                 <div class="service-card p-8 rounded-2xl text-center reveal" style="transition-delay: 400ms;">
+                    <h3 class="text-xl font-bold text-white">Infografías y Banners</h3>
+                </div>
+                 <div class="service-card p-8 rounded-2xl text-center reveal" style="transition-delay: 500ms;">
+                    <h3 class="text-xl font-bold text-white">Gestión de Anuncios</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========== CONTACTO / FOOTER SECTION =========== -->
+    <footer class="py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center reveal">
+             <h2 class="text-4xl md:text-5xl font-black tracking-tight text-white">Vamos a crear algo</h2>
+             <p class="mt-2 text-4xl md:text-5xl font-bold gradient-text">increíble juntos.</p>
+            
+            <div class="mt-12 flex justify-center items-center space-x-8">
+                <a href="mailto:Adrian.alcaraz.ctes@gmail.com" class="text-gray-400 hover:text-white transition-colors" title="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+                <a href="https://goo.su/Odav" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://www.instagram.com/club.ia.esteticas/" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+
+            <p class="mt-12 text-gray-500 text-sm">&copy; 2024 Adrián Alcaraz. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const elementsToReveal = document.querySelectorAll('.reveal');
+            elementsToReveal.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
